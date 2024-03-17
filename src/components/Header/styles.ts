@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
+interface headerProps {
+  bgImg: string;
+}
+
+export const HeaderContainer = styled.header<headerProps>`
   background: ${(props) => props.theme["gray-900"]};
+  background-image: url(${(props) => props.bgImg});
   padding: 2.5rem 0 7.5rem;
 `;
 
