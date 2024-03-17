@@ -2,13 +2,12 @@ import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { SearchForm } from "./components/SearchForm";
 import {
-  PriceHighlight,
+  CardListGridContainer,
   TransactionsContainer,
-  TransactionsTable,
 } from "./styles";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
-import { currencyFormatter, dateFormatter } from "../../utils/formatter";
 import { useContextSelector } from "use-context-selector";
+import { IssueCard } from "../../components/IssueCard";
 
 export function Transactions() {
   const transactions = useContextSelector(TransactionsContext, (ctx) => {
@@ -21,25 +20,12 @@ export function Transactions() {
       <Summary />
       <TransactionsContainer>
         <SearchForm />
-        <TransactionsTable>
-          <tbody>
-            {transactions.map((transaction) => (
-              <tr key={transaction.id}>
-                <td width="50%">{transaction.description}</td>
-                <td>
-                  <PriceHighlight variant={transaction.type}>
-                    {transaction.type === "outcome" && "- "}
-                    {currencyFormatter.format(transaction.price)}
-                  </PriceHighlight>
-                </td>
-                <td>{transaction.category}</td>
-                <td>
-                  {dateFormatter.format(new Date(transaction.createdAt))}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </TransactionsTable>
+        <CardListGridContainer>
+          <IssueCard />
+          <IssueCard />
+          <IssueCard />
+          <IssueCard />
+        </CardListGridContainer>
       </TransactionsContainer>
     </div>
   );
