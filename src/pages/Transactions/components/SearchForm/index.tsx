@@ -1,6 +1,6 @@
 import { MagnifyingGlass } from "phosphor-react";
 import { useForm } from "react-hook-form";
-import { SeachFormContainer } from "./styles";
+import { SeachFormContainer, SearchFormHeader } from "./styles";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { TransactionsContext } from "../../../../contexts/TransactionsContext";
@@ -30,9 +30,16 @@ const searchFormSchema = z.object({
 type SearchFormInputs = z.infer<typeof searchFormSchema>;
 
 function SearchFormComponent() {
-  const fetchTransactions = useContextSelector(TransactionsContext, (ctx) => ctx.fetchTransactions);
+  const fetchTransactions = useContextSelector(
+    TransactionsContext,
+    (ctx) => ctx.fetchTransactions
+  );
 
-  const { register, handleSubmit, formState: { isSubmitting} } = useForm<SearchFormInputs>({
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<SearchFormInputs>({
     resolver: zodResolver(searchFormSchema),
   });
 
@@ -41,17 +48,23 @@ function SearchFormComponent() {
   }
 
   return (
-    <SeachFormContainer onSubmit={handleSubmit(handleSearchTransactions)}>
-      <input
-        type="text"
-        placeholder="Busque transações"
-        {...register("query")}
-      />
-      <button type="submit" disabled={isSubmitting}>
-        <MagnifyingGlass size={20} weight="fill" />
-        Buscar
-      </button>
-    </SeachFormContainer>
+    <>
+      <SearchFormHeader>
+        <h3>Publicações</h3>
+        <span style={{ fontSize: "14px" }}>3 Publicações</span>
+      </SearchFormHeader>
+      <SeachFormContainer onSubmit={handleSubmit(handleSearchTransactions)}>
+        <input
+          type="text"
+          placeholder="Buscase contenido"
+          {...register("query")}
+        />
+        <button type="submit" disabled={isSubmitting}>
+          <MagnifyingGlass size={20} weight="fill" />
+          Buscar
+        </button>
+      </SeachFormContainer>
+    </>
   );
 }
 

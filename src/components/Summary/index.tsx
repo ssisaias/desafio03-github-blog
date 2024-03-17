@@ -1,5 +1,5 @@
 import { GithubLink, SummaryCard, SummaryContainer } from "./styles";
-import { ArrowSquareOut, GithubLogo } from "phosphor-react";
+import { ArrowSquareOut, Buildings, GithubLogo, Users } from "phosphor-react";
 import { useTheme } from "styled-components";
 
 export function Summary() {
@@ -33,15 +33,15 @@ export function Summary() {
           </article>
           <footer>
             <div>
-              <GithubLogo size={18} color={theme["base-text"]} />
+              <GithubLogo size={18} weight="fill" color={theme["base-text"]} />
               <span>ssisaias</span>
             </div>
             <div>
-              <GithubLogo size={18} color={theme["base-text"]} />
+              <Buildings size={18} weight="fill" color={theme["base-text"]} />
               <span>ssisaias</span>
             </div>
             <div>
-              <GithubLogo size={18} color={theme["base-text"]} />
+              <Users size={18} weight="fill" color={theme["base-text"]} />
               <span>ssisaias</span>
             </div>
           </footer>
