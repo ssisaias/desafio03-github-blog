@@ -4,7 +4,7 @@ export function IssueCard() {
   return (
     <IssueCardContainer>
       <header>
-        <a href="#">
+        <a>
           <h2>Issue Name</h2>  
         </a>
         <span>

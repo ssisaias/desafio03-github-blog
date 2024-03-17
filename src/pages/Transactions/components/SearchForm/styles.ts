@@ -49,8 +49,8 @@ export const SeachFormContainer = styled.form`
 
     &:not(:disabled):hover {
       background: ${(props) => props.theme["base-background"]};
-      border: 1px solid ${(props) => props.theme["white"]};
-      color: ${(props) => props.theme.white};
+      border: 1px solid ${(props) => props.theme["blue"]};
+      color: ${(props) => props.theme["blue"]};
       transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     }
   }

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const SummaryContainer = styled.div`
   width: 100%;
@@ -77,4 +77,10 @@ export const GithubLink = styled.a`
   height: 1.5rem;
   display: flex;
   text-decoration: none;
+  &:visited {
+    color: ${(props) => props.theme["base-span"]};
+  }
+  &:hover {
+    color: ${(props) => props.theme["blue"]};
+  }
 `;
