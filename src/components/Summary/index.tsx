@@ -1,33 +1,51 @@
-import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "phosphor-react";
-import { SummaryCard, SummaryContainer } from "./styles";
-import { currencyFormatter } from "../../utils/formatter";
-import { useSummary } from "../../hooks/useSummary";
+import { GithubLink, SummaryCard, SummaryContainer } from "./styles";
+import { ArrowSquareOut, GithubLogo } from "phosphor-react";
+import { useTheme } from "styled-components";
 
 export function Summary() {
-  const summary = useSummary();
+  const theme = useTheme();
 
   return (
     <SummaryContainer>
       <SummaryCard>
+        <GithubLink href="https://github.com/isaias-silva" target="_blank">
+          <span>Github</span> <ArrowSquareOut></ArrowSquareOut>{" "}
+        </GithubLink>
         <header>
-          <span>Entradas</span>
-          <ArrowCircleUp size={32} color="#00b37e" />
+          <img src="https://avatars.githubusercontent.com/u/3528085?v=4" />
         </header>
-        <strong>{currencyFormatter.format(summary.income)}</strong>
-      </SummaryCard>
-      <SummaryCard>
-        <header>
-          <span>Saídas</span>
-          <ArrowCircleDown size={32} color="#f75a68" />
-        </header>
-        <strong>{currencyFormatter.format(summary.outcome)}</strong>
-      </SummaryCard>
-      <SummaryCard variant="green">
-        <header>
-          <span>Total</span>
-          <CurrencyDollar size={32} color="#ffffff" />
-        </header>
-        <strong>{currencyFormatter.format(summary.balance)}</strong>
+        <div>
+          <article>
+            <h2>Isaias Silvolas</h2>
+            <p>
+              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              vestibulum, sapien euismod aliquam aliquam, lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Sed vestibulum, sapien euismod
+              aliquam aliquam, lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Sed vestibulum, sapien euismod aliquam aliquam,
+              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              vestibulum, sapien euismod aliquam aliquam, lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Sed vestibulum, sapien euismod
+              aliquam aliquam, lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Sed vestibulum, sapien euismod aliquam aliquam,
+              lorem ipsum dolor sit amet
+            </p>
+          </article>
+          <footer>
+            <div>
+              <GithubLogo size={18} color={theme["base-text"]} />
+              <span>ssisaias</span>
+            </div>
+            <div>
+              <GithubLogo size={18} color={theme["base-text"]} />
+              <span>ssisaias</span>
+            </div>
+            <div>
+              <GithubLogo size={18} color={theme["base-text"]} />
+              <span>ssisaias</span>
+            </div>
+          </footer>
+        </div>
       </SummaryCard>
     </SummaryContainer>
   );
