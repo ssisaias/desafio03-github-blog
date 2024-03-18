@@ -1,10 +1,7 @@
 import { IssueHeaderCard, IssueHeaderContainer } from "./styles";
 import {
   Calendar,
-  Balloon,
-  Buildings,
   GithubLogo,
-  Users,
   ChatDots,
   ArrowArcLeft,
   ArrowSquareOut,
@@ -19,8 +16,12 @@ export function IssueHeader() {
     <IssueHeaderContainer>
       <IssueHeaderCard>
         <header>
-          <Link to="/"><ArrowArcLeft></ArrowArcLeft>Go Back</Link>
-          <Link to="https://github.com/ssisaias">View in github <ArrowSquareOut></ArrowSquareOut></Link>
+          <Link to="/">
+            <ArrowArcLeft></ArrowArcLeft>Go Back
+          </Link>
+          <Link to="https://github.com/ssisaias">
+            View in github <ArrowSquareOut></ArrowSquareOut>
+          </Link>
         </header>
         <article>
           <h2>Isaias Silvolas</h2>
