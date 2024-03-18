@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import { IssueCardContainer } from "./styles";
 
 export function IssueCard() {
   return (
     <IssueCardContainer>
       <header>
-        <a>
+        <Link to="/issue/1">
           <h2>Issue Name</h2>  
-        </a>
+        </Link>
         <span>
           Há 1 dia
         </span>

@@ -21,6 +21,10 @@ export const IssueCardContainer = styled.div`
       font-size: 1.2rem;
       font-weight: 600;
 
+      h2 {
+        cursor: pointer;
+      }
+
       &:visited {
           color: ${(props) => props.theme["base-title"]};
       }
