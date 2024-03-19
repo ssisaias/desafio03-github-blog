@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { IssueCardContainer } from "./styles";
+import Markdown from "react-markdown";
 
 interface issueCardProps{
   issueNumber: number;
@@ -24,7 +25,8 @@ export function IssueCard(props: issueCardProps) {
         </span>
       </header>
 
-      <p>{props.body}</p>
+      {props.body && <Markdown>{props.body.substring(0, 300)}</Markdown>}
+      
     </IssueCardContainer>
   );
 }
