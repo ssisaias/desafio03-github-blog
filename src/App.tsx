@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { TransactionsProvider } from "./contexts/TransactionsContext";
+import { IssuesProvider } from "./contexts/IssuesContext";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
 import { ThemeProvider } from "styled-components";
@@ -10,15 +10,13 @@ export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      {/* 
-      <TransactionsProvider> */}
       <UserDataProvider>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
+        <IssuesProvider>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+        </IssuesProvider>
       </UserDataProvider>
-      {/* 
-      </TransactionsProvider> */}
     </ThemeProvider>
   );
 }

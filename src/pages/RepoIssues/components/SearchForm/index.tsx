@@ -3,10 +3,9 @@ import { useForm } from "react-hook-form";
 import { SeachFormContainer, SearchFormHeader } from "./styles";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { TransactionsContext } from "../../../../contexts/TransactionsContext";
-import { useContextSelector } from "use-context-selector";
+import { IssuesContext } from "../../../../contexts/IssuesContext";
 
-import { memo } from "react";
+import { memo, useContext } from "react";
 /* Por que um component renderiza?
 - Hooks changed (mudou estado, contexto, reducer)
 - Props changed
@@ -30,10 +29,7 @@ const searchFormSchema = z.object({
 type SearchFormInputs = z.infer<typeof searchFormSchema>;
 
 function SearchFormComponent() {
-  const fetchTransactions = useContextSelector(
-    TransactionsContext,
-    (ctx) => ctx.fetchTransactions
-  );
+  const { fetchIssues } = useContext(IssuesContext);
 
   const {
     register,
@@ -43,8 +39,8 @@ function SearchFormComponent() {
     resolver: zodResolver(searchFormSchema),
   });
 
-  async function handleSearchTransactions(data: SearchFormInputs) {
-    await fetchTransactions(data.query);
+  async function handleSearchIssues(data: SearchFormInputs) {
+    await fetchIssues(data.query);
   }
 
   return (
@@ -53,7 +49,7 @@ function SearchFormComponent() {
         <h3>Publicações</h3>
         <span style={{ fontSize: "14px" }}>3 Publicações</span>
       </SearchFormHeader>
-      <SeachFormContainer onSubmit={handleSubmit(handleSearchTransactions)}>
+      <SeachFormContainer onSubmit={handleSubmit(handleSearchIssues)}>
         <input
           type="text"
           placeholder="Buscase contenido"

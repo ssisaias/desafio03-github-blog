@@ -1,21 +1,30 @@
 import { Link } from "react-router-dom";
 import { IssueCardContainer } from "./styles";
 
-export function IssueCard() {
+interface issueCardProps{
+  issueNumber: number;
+  url: string;
+  title: string;
+  created_at: string;
+  body: string;
+}
+
+export function IssueCard(props: issueCardProps) {
+  const timeDiff = Math.abs(new Date().getTime() - new Date(props.created_at).getTime());
+  const daysAgo = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
   return (
     <IssueCardContainer>
       <header>
-        <Link to="/issue/1">
-          <h2>Issue Name</h2>  
+        <Link to={`/issue/${props.issueNumber}`}>
+          <h2>{props.title}</h2>  
         </Link>
         <span>
-          Há 1 dia
+          {new Intl.RelativeTimeFormat().format(-daysAgo, 'day')}
         </span>
       </header>
 
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quisquam cupiditate ipsum quos ipsa voluptates molestiae suscipit illo, id quia. Voluptatem provident voluptas similique quibusdam repudiandae, in atque corrupti odit.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quisquam cupiditate ipsum quos ipsa voluptates molestiae suscipit illo, id quia. Voluptatem provident voluptas similique quibusdam repudiandae, in atque corrupti odit.
-      </p>
+      <p>{props.body}</p>
     </IssueCardContainer>
   );
 }

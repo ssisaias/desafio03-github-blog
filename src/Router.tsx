@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Transactions } from "./pages/Transactions";
+import { RepoIssues } from "./pages/RepoIssues";
 import { Issue } from "./pages/Issue";
 /* import { DefaultLayout } from './layouts/DefaultLayout' */
 
@@ -7,9 +7,8 @@ export function Router() {
 
   return (
       <Routes>
-        <Route path="/" element={<Transactions />} />
-        <Route path="/issue/1" element={<Issue />} />
+        <Route path="/" element={<RepoIssues />} />
+        <Route path="/issue/:id" element={<Issue />} />
       </Routes>
-    
   );
 }

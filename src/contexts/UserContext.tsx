@@ -49,7 +49,6 @@ interface UserDataProviderProps {
 
 export function UserDataProvider({ children }: UserDataProviderProps) {
   const ghAccessToken = import.meta.env.VITE_GITHUB_TOKEN;
-  console.log("ghAccessToken", ghAccessToken);
 
   const [userData, setUserData] = useState<UserData>({} as UserData);
   const fetchUserData = useCallback(async () => {
@@ -62,11 +61,10 @@ export function UserDataProvider({ children }: UserDataProviderProps) {
       : api.get(`/users/ssisaias`);
     response
       .then((res) => {
-        console.log(res);
         setUserData(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
   }, [ghAccessToken]);
 
