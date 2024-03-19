@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 interface headerProps {
-  bgImg: string;
+  bgimage: string;
 }
 
 export const HeaderContainer = styled.header<headerProps>`
   background: ${(props) => props.theme["gray-900"]};
-  background-image: url(${(props) => props.bgImg});
+  background-image: url(${(props) => props.bgimage});
   padding: 2.5rem 0 7.5rem;
 `;
 

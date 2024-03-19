@@ -4,15 +4,21 @@ import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
 import { ThemeProvider } from "styled-components";
 import { Router } from "./Router";
+import { UserDataProvider } from "./contexts/UserContext";
+
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <TransactionsProvider>
+      {/* 
+      <TransactionsProvider> */}
+      <UserDataProvider>
         <BrowserRouter>
           <Router />
         </BrowserRouter>
-      </TransactionsProvider>
+      </UserDataProvider>
+      {/* 
+      </TransactionsProvider> */}
     </ThemeProvider>
   );
 }

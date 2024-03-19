@@ -6,7 +6,7 @@ import coverImg from "../../assets/cover.png"
 export function Header() {
 
   return (
-    <HeaderContainer bgImg={coverImg}>
+    <HeaderContainer bgimage={coverImg}>
       <HeaderContent>
         <img src={logoImg} alt="" />
       </HeaderContent>
