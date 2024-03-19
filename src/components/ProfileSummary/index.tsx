@@ -1,4 +1,4 @@
-import { GithubLink, SummaryCard, SummaryContainer } from "./styles";
+import { SummaryCard, SummaryContainer } from "./styles";
 import { ArrowSquareOut, Buildings, GithubLogo, Users } from "phosphor-react";
 import { useContext } from "react";
 import { useTheme } from "styled-components";

@@ -1,12 +1,11 @@
 import { Header } from "../../components/Header";
-import { Summary } from "../../components/Summary";
+import { Summary } from "../../components/ProfileSummary";
 import { SearchForm } from "./components/SearchForm";
 import {
   CardListGridContainer,
   TransactionsContainer,
 } from "./styles";
 import { TransactionsContext } from "../../contexts/TransactionsContext";
-import { useContextSelector } from "use-context-selector";
 import { IssueCard } from "../../components/IssueCard";
 
 export function Transactions() {
