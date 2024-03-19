@@ -10,6 +10,23 @@ export const SummaryContainer = styled.div`
   flex-direction: column;
 
   margin-top: -5rem;
+
+  a {
+    display: flex;
+    align-items:right;
+    position: relative;
+    left: 12rem;
+    top: 2.3rem;
+
+    height: 1.5rem;
+    text-decoration: none;
+    &:visited {
+      color: ${(props) => props.theme["base-span"]};
+    }
+    &:hover {
+      color: ${(props) => props.theme["blue"]};
+    }
+  }
 `;
 
 export const SummaryCard = styled.div`
@@ -60,27 +77,5 @@ export const SummaryCard = styled.div`
         }
       }
     }
-  }
-`;
-
-export const GithubLink = styled.a`
-  position: absolute;
-  left: 80%;
-  @media (max-width: 768px) {
-    position: fixed;
-    left: 80%;
-    bottom: 0;
-    font-size: 0.6rem;
-  }
-  background: ${(props) => props.theme["base-profile"]};
-  border-radius: 6px;
-  height: 1.5rem;
-  display: flex;
-  text-decoration: none;
-  &:visited {
-    color: ${(props) => props.theme["base-span"]};
-  }
-  &:hover {
-    color: ${(props) => props.theme["blue"]};
   }
 `;
