@@ -8,7 +8,7 @@ export interface UserData {
   avatar_url: string | undefined;
   gravatar_id: string | undefined;
   url: string;
-  html_url: string | undefined;
+  html_url: string;
   followers_url: string | undefined;
   following_url: string | undefined;
   gists_url: string | undefined;

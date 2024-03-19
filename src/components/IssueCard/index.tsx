@@ -4,7 +4,6 @@ import Markdown from "react-markdown";
 
 interface issueCardProps{
   issueNumber: number;
-  url: string;
   title: string;
   created_at: string;
   body: string;

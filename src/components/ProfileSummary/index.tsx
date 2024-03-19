@@ -11,7 +11,7 @@ export function Summary() {
 
   return (
     <SummaryContainer>
-      <Link to={userData.url}>
+      <Link to={userData.html_url} target="_blank">
         <span>Github</span> <ArrowSquareOut></ArrowSquareOut>{" "}
       </Link>
       <SummaryCard>

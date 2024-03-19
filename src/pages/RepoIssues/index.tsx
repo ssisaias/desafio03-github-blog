@@ -8,7 +8,6 @@ import { useContext } from "react";
 
 export interface issueProps {
   issueNumber: number;
-  url: string;
   title: string;
   created_at: string;
   body: string;
@@ -29,7 +28,6 @@ export function RepoIssues() {
               <IssueCard
                 key={issue.issueNumber}
                 issueNumber={issue.issueNumber}
-                url={issue.url}
                 title={issue.title}
                 created_at={issue.created_at}
                 body={issue.body}
