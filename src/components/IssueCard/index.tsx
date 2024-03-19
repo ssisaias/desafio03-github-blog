@@ -17,7 +17,7 @@ export function IssueCard(props: issueCardProps) {
   return (
     <IssueCardContainer>
       <header>
-        <Link to={`/issue/${props.issueNumber}`}>
+        <Link to={`/issue/${props.issueNumber}`} title={props.title}>
           <h2>{props.title}</h2>  
         </Link>
         <span>

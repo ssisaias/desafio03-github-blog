@@ -23,6 +23,12 @@ export const IssueCardContainer = styled.div`
 
       h2 {
         cursor: pointer;
+        overflow: auto;
+        max-width: 450px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        -webkit-box-orient: vertical;
       }
 
       &:visited {
@@ -37,6 +43,8 @@ export const IssueCardContainer = styled.div`
   }
 
   p {
+    position: relative;
+    max-width: 500px;
     line-height: 1.2rem;
     color: ${(props) => props.theme["text"]};
     overflow: hidden;
